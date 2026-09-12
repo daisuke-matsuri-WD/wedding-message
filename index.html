@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Wedding Message</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- オープニング -->
+  <div id="opening">
+    <div class="opening-inner">
+      <p>WELCOME</p>
+      <h1>Wedding<br>Message</h1>
+      <span></span>
+      <small>17 OCTOBER 2026</small>
+    </div>
+  </div>
+
+
+  <!-- メイン -->
+  <main>
+
+    <!-- TOP -->
+    <section class="hero">
+      <div class="hero-inner">
+
+        <p class="small-title">A SPECIAL DAY</p>
+
+        <h1>
+          Wedding<br>
+          <em>Message</em>
+        </h1>
+
+        <p class="intro">
+          私たちの大切な一日に<br>
+          来てくださってありがとうございます。
+        </p>
+
+        <div class="scroll">
+          <span>SCROLL</span>
+          <i></i>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ログイン -->
+    <section id="login-section">
+
+      <div class="section-inner">
+
+        <p class="section-title">YOUR MESSAGE</p>
+
+        <h2>
+          あなたへの<br>
+          メッセージ
+        </h2>
+
+        <p class="description">
+          お名前とパスワードを入力してください。
+        </p>
+
+
+        <div class="login-box">
+
+          <label for="name">お名前</label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="お名前を入力してください"
+            autocomplete="off"
+          >
+
+
+          <label for="password">PASSWORD</label>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="パスワード"
+            inputmode="numeric"
+            autocomplete="off"
+          >
+
+
+          <button id="message-button" type="button">
+            <span>MESSAGE</span>
+            <strong>→</strong>
+          </button>
+
+
+          <p id="error-message"></p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- メッセージ -->
+    <section id="message-section">
+
+      <div class="message-inner">
+
+        <div class="message-header">
+
+          <p class="section-title">DEAR</p>
+
+          <h2 id="guest-name"></h2>
+
+          <div class="line"></div>
+
+        </div>
+
+
+        <!-- 共通写真 -->
+        <div class="photo-box">
+
+          <img
+            id="guest-photo"
+            src="images/wedding.jpg"
+            alt="新郎新婦の写真"
+          >
+
+        </div>
+
+
+        <!-- 個別メッセージ -->
+        <div class="message-box">
+
+          <p class="message-title">
+            SPECIAL MESSAGE
+          </p>
+
+          <div id="guest-message"></div>
+
+        </div>
+
+
+        <!-- 最後 -->
+        <div class="closing">
+
+          <div class="star">✦</div>
+
+          <p>
+            Thank you for being<br>
+            part of our special day.
+          </p>
+
+          <h3>
+            Taro &amp; Hanako
+          </h3>
+
+          <small>
+            17 · 10 · 2026
+          </small>
+
+          <button id="back-button" type="button">
+            ← BACK
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      <div>T &amp; H</div>
+
+      <p>WITH LOVE</p>
+
+      <small>© 2026 Wedding Message</small>
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
