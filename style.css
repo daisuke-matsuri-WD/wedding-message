@@ -1,0 +1,678 @@
+/* =========================
+   基本設定
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f4ef;
+  color: #403b36;
+  font-family: "Noto Serif JP", serif;
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+
+/* =========================
+   オープニング
+========================= */
+
+#opening {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #403b36;
+  color: #f7f4ef;
+
+  animation: openingHide 2.8s ease forwards;
+  pointer-events: none;
+}
+
+.opening-inner {
+  text-align: center;
+  opacity: 0;
+
+  animation: openingText 1.5s ease 0.3s forwards;
+}
+
+.opening-inner p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  letter-spacing: 7px;
+  margin-bottom: 28px;
+}
+
+.opening-inner h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-size: clamp(55px, 10vw, 110px);
+  line-height: 0.82;
+  letter-spacing: 2px;
+}
+
+.opening-inner span {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #d8d0c5;
+  margin: 38px auto;
+}
+
+.opening-inner small {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+@keyframes openingText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes openingHide {
+  0% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #ffffff 0%,
+      #f7f4ef 55%,
+      #eee9e1 100%
+    );
+}
+
+.hero-inner {
+  opacity: 0;
+
+  animation:
+    heroAppear 2s ease 2.2s forwards;
+}
+
+.small-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  letter-spacing: 6px;
+  margin-bottom: 35px;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(70px, 13vw, 150px);
+  font-weight: 300;
+  line-height: 0.75;
+  letter-spacing: -2px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.intro {
+  margin-top: 55px;
+  line-height: 2.4;
+  font-size: 14px;
+  color: #6f6860;
+}
+
+.scroll {
+  margin-top: 100px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.scroll i {
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: #8d857c;
+  margin: 12px auto 0;
+}
+
+@keyframes heroAppear {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+#login-section {
+  padding: 150px 20px 180px;
+  text-align: center;
+}
+
+.section-inner {
+  width: min(600px, 100%);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #8b8278;
+  margin-bottom: 28px;
+}
+
+#login-section h2 {
+  font-size: 34px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.description {
+  margin-top: 30px;
+  color: #817970;
+  font-size: 13px;
+}
+
+.login-box {
+  width: min(430px, 100%);
+  margin: 60px auto 0;
+  text-align: left;
+}
+
+.login-box label {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: #746c64;
+}
+
+.login-box input {
+  width: 100%;
+  height: 55px;
+
+  border: none;
+  border-bottom: 1px solid #bdb5ac;
+
+  background: transparent;
+
+  padding: 0 5px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  margin-bottom: 35px;
+
+  color: #403b36;
+}
+
+.login-box input:focus {
+  border-bottom: 1px solid #403b36;
+}
+
+.login-box input::placeholder {
+  color: #aaa39c;
+}
+
+
+/* =========================
+   MESSAGE BUTTON
+========================= */
+
+#message-button {
+  width: 100%;
+  height: 65px;
+
+  border: 1px solid #403b36;
+
+  background: #403b36;
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 25px;
+
+  margin-top: 10px;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    transform 0.3s ease;
+}
+
+#message-button span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+#message-button strong {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#message-button:hover {
+  background: transparent;
+  color: #403b36;
+  transform: translateY(-2px);
+}
+
+#message-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================
+   エラーメッセージ
+========================= */
+
+#error-message {
+  min-height: 25px;
+
+  margin-top: 18px;
+
+  text-align: center;
+
+  color: #9a6868;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   MESSAGE SECTION
+========================= */
+
+#message-section {
+  display: none;
+
+  min-height: 100vh;
+
+  padding: 150px 20px 180px;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f4ef 0%,
+      #eee9e1 100%
+    );
+}
+
+#message-section.show {
+  display: block;
+
+  animation: messageAppear 2s ease forwards;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-inner {
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.message-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.message-header h2 {
+  font-size: clamp(30px, 6vw, 48px);
+  font-weight: 400;
+}
+
+.line {
+  width: 50px;
+  height: 1px;
+  background: #aaa198;
+  margin: 30px auto 0;
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-box {
+  width: min(650px, 100%);
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  background: #ddd7cf;
+}
+
+.photo-box img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  opacity: 0;
+
+  transform: scale(1.08);
+
+  animation: photoAppear 2.5s ease 0.7s forwards;
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================
+   MESSAGE BOX
+========================= */
+
+.message-box {
+  width: min(620px, 100%);
+
+  margin: 90px auto 0;
+
+  padding: 60px 50px;
+
+  background: rgba(255,255,255,0.55);
+
+  text-align: center;
+
+  opacity: 0;
+
+  animation: textAppear 2s ease 1.2s forwards;
+}
+
+.message-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #8a8178;
+  margin-bottom: 35px;
+}
+
+#guest-message {
+  white-space: pre-line;
+
+  font-size: 15px;
+
+  line-height: 2.5;
+
+  color: #514b45;
+}
+
+@keyframes textAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   CLOSING
+========================= */
+
+.closing {
+  text-align: center;
+
+  margin-top: 120px;
+
+  opacity: 0;
+
+  animation: textAppear 2s ease 2s forwards;
+}
+
+.star {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.closing p {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  letter-spacing: 1px;
+}
+
+.closing h3 {
+  margin-top: 45px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 32px;
+
+  font-weight: 400;
+}
+
+.closing small {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+#back-button {
+  margin-top: 60px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #716960;
+
+  font-family: "Cormorant Garamond", serif;
+
+  letter-spacing: 3px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  padding: 15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background: #403b36;
+
+  color: #f4f0ea;
+}
+
+footer div {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+
+  letter-spacing: 4px;
+}
+
+footer p {
+  margin-top: 15px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+}
+
+footer small {
+  display: block;
+
+  margin-top: 30px;
+
+  font-size: 10px;
+
+  opacity: 0.6;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 90vh;
+  }
+
+  .hero h1 {
+    font-size: 70px;
+  }
+
+  #login-section {
+    padding-top: 110px;
+    padding-bottom: 130px;
+  }
+
+  #login-section h2 {
+    font-size: 28px;
+  }
+
+  #message-section {
+    padding-top: 110px;
+  }
+
+  .message-box {
+    padding: 45px 25px;
+    margin-top: 60px;
+  }
+
+  #guest-message {
+    font-size: 14px;
+    line-height: 2.2;
+  }
+
+  .closing {
+    margin-top: 90px;
+  }
+
+  .opening-inner h1 {
+    font-size: 62px;
+  }
+
+}
+
+
+/* =========================
+   iPhone等
+========================= */
+
+@media (max-width: 380px) {
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .opening-inner h1 {
+    font-size: 52px;
+  }
+
+}
